@@ -1,0 +1,13 @@
+ 
+ @import 'variables';
+
+ *{
+    background-color: adjust-hue($color: #000000, $degrees: 0);
+ } 
+
+.head-tag{
+    color: $text-color;
+    background-color:$bg-color ;
+    text-align: center;
+    padding: 40px;
+}

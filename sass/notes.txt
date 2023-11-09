@@ -1,0 +1,124 @@
+any file names starting with _ will be neglected to compiler
+
+@import is used to import different packages and scss files
+
+nested rules can be applied 
+
+math operations are possible to work with
+if you need to perform any math operation you can do with this like add sub
+if there is any problem with it then what you have to use is some inbuilt library to handle this
+
+@use 'sass:math' -----use keyword is used in order to use some inbuilt library
+
+@import -----it is like global import where you can use everything
+
+@use is like using the specific element in the packages
+
+@debug is used to check some calculations and made the output to print in console
+
+map is used to store the various properties of the scss and if you need to access them
+you need to call using
+---------------map-get(keyname,property name);
+the structure for this would be like this
+$color:{
+    "purple":purple
+}
+--------map-has-key(same syntax)
+note:It is enclosed in paranthesis
+---------map.remove(same syntax);
+if you need to merge the different map with different one 
+then you can go for
+map.merge($color,("red":red));
+
+@each is used to iterate
+syntax
+
+the below $variables are only accessible within the loop and by
+accessing it outside will throw you some errors
+
+and if you need to append it to string then the syntax for using that would be like
+#{$key}
+
+@each $key,$val in $colors{
+    .text-#{key}:{
+        color:$val
+    }
+}
+
+If you need to use for loop then you can use it like this
+@for $i from 1 through 9{
+
+}
+
+if you need to mix two colors then you can use mix functions
+mix(1,2,3);
+the third argument is how many 1 st element percent you are going to use with
+the second one
+
+@if(){}----is used to test the condition
+
+if you want to specify lot of functionalities like hover,first-child,etc,..
+then go for & symbol and specify the property you need to use
+----------ex:
+.text{
+    &:hover{
+        color:green;
+    }
+}
+
+
+if you want to reduce the repeated code then you can go for mixins
+what you have to do is declare it like functions and call wherever 
+you need
+---------------syntax
+@mixin mixinname(){
+
+}
+like functions you can pass parameters and if the actual values is not passed
+then you can go for default values
+
+in order to use that mixin you can use @include 
+----------ex
+.text{
+    @include mixinname();
+}
+
+lighten(color,5)----------going to lighten the color by 5%
+
+functions are same like mixins it takes single argument and by using return
+keyword it returns the values @function
+
+utility classes are used to make classes in sass
+$utilities{
+    "padding":{
+        "prefix":"value of class",
+        "values":(
+            "1":40px
+        )
+
+    }
+}
+
+$default is specified inside values if they are not choosing any key things
+
+@media----in order to use media queries you can use this and it csn be achieved through
+using mixins
+
+@mixin s{
+    @media (min-width:map.get($map,"key")){
+        @content;
+    }
+}
+
+@content is just to insert indirectly of different rules into your css files
+
+gulp-purgecss--------------is used to remove the unused to css styles
+
+
+
+
+
+
+
+
+
